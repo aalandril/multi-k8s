@@ -22,13 +22,12 @@ after_success:
     - docker push aalandril/multi-worker
 
     deploy:
-        edge: true
         provider: elasticbeanstalk
-        region: "eu-west-1"
-        app: "multi-docker"
-        env: "MultiDocker-env"
-        bucket_name: "elasticbeanstalk-eu-west-1-686651145759"
-        bucket_path: "docker-multi"
+        region: eu-west-1
+        app: multi-docker
+        env: MultiDocker-env
+        bucket_name: elasticbeanstalk-eu-west-1-686651145759
+        bucket_path: docker-multi
         on:
             branch: master
         access_key_id: $AWS_ACCESS_KEY
